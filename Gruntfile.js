@@ -37,7 +37,8 @@ module.exports = function(grunt) {
             },
             interactive: {
                 files: {
-                    'build/main.css': 'src/css/main.scss'
+                    'build/main.css': 'src/css/main.scss',
+                    'build/style.css': 'src/css/style.scss',
                 }
             },
             embed: {
@@ -74,7 +75,7 @@ module.exports = function(grunt) {
             },
             'bootjs': {
                 'files': {
-                    'build/boot.js': ['src/js/boot.js.tpl'],
+                    'build/boot.js': ['src/js/boot.js'],
                 }
             },
             'embed': {
@@ -104,8 +105,10 @@ module.exports = function(grunt) {
                     },
                     { // ASSETS
                         expand: true, cwd: 'build/',
-                        src: ['main.js', 'main.css', 'main.js.map', 'main.css.map',
+                        src: [
+                            'main.js', 'main.css', 'main.js.map', 'main.css.map',
                             'embed.js', 'embed.css', 'embed.js.map', 'embed.css.map',
+                            'style.css', 'style.css.map',
                             'assets/**/*'],
                         dest: 'deploy/<%= visuals.timestamp %>/<%= visuals.timestamp %>'
                     }

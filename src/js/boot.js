@@ -21,7 +21,7 @@ define([], function() {
 
             // Load CSS asynchronously
             window.setTimeout(function() {
-                addCSS('<%= assetPath %>/main.css');
+                addCSS('<%= assetPath %>/style.css');
             }, 10);
 
             // Load JS and init
