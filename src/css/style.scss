@@ -1,649 +1,718 @@
 // Default breakpoints from Frontend
 $mq-breakpoints: (
-    mobile:          320px,
+    mobile: 320px,
     mobileLandscape: 480px,
-    phablet:         660px,
-    tablet:          740px,
-    desktop:         980px,
-    leftCol:         1140px,
-    wide:            1300px
+    phablet: 660px,
+    tablet: 740px,
+    desktop: 980px,
+    leftCol: 1140px,
+    wide: 1300px
 );
 
 @import "mq_old";
 
-$primary-color:#6fa19a;
-.drop-cap__inner{
-  color:$primary-color;
-}
-
-.immersive-header-container{
-  min-height: 20vh;
-}
-
-.immersive-main-media__headline-container{
-  background: none;
-  background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/membership-background-two-simple.png');
-  top: 0;
-  bottom: auto;
-  height: 400px;
-  background-position-y: -7vw;
-  background-repeat: no-repeat;
-  background-size: 100%;
-
-
-  @include mq($until:tablet){
-    background-position-y:0px;
-    background-size: 170%;
-  }
-
-}
-
-.immersive-main-media{
-  min-height: 22rem!important;
-}
-
-.series-identity{
-  background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/membership-background-two.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 20px 30px 30px 20px;
-  position: relative;
-  top:-8px;
-  height: 20px;
-  left: 22%;
-
-  @include mq($until:wide){
-    left: 18%;
-  }
-
-  @include mq($until:leftCol){
-    left:7%;
-  }
-
-  @include mq($until:mobileLandscape){
-    top: 40px;
-    left: 0%;
-  };
-
-  &:before{
-    content: 'Labour & Liverpool';
-    color: white;
-    position: absolute;
-    z-index: 20;
-    top: 13px;
-    width: 180px;
-    font-size: 18px;
-    line-height: 19px;
-    font-weight: 800;
-    font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
-  }
-  &:after{
-    content: 'with Ewen MacAskill';
-    color: white;
-    position: absolute;
-    z-index: 20;
-    top: 33px;
+$primary-color: #6fa19a;
+.drop-cap__inner {
     color: $primary-color;
-    width: 180px;
-    font-size: 18px;
-    line-height: 19px;
-    font-weight: 800;
-    font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
-  }
 }
 
-.membership-cutout{
-  height: 116px;
-  width: 156px;
-  background-image: url('https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2015/8/18/1439913873894/Ewen-MacAskill-R.png?w=300&q=55&auto=format&usm=12&fit=max&s=2c8dc813795a8c11dd98e28377a5893f');
-  background-position: center bottom;
-  background-size: cover;
-  float: left;
-  background-repeat: no-repeat;
-  z-index: 10;
-  margin-left: -20px;
-  margin-right: -15px;
-  @include mq($until:tablet){
-    display: none;
-  };
-
-  @include mq($until:mobileLandscape){
-    right: -10%;
-    width: 170px;
-  }
-
+.immersive-header-container {
+    min-height: 20vh;
 }
 
-.content__article-body{
-    p:first-of-type{
-      color: $primary-color;
-      font-size: 22px;
-      line-height: 24px;
-      font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
-      font-weight:200;
-      margin-top: 10px;
-
-      &:before{
-        display: block;
-        float: left;
-        content: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote_marks.svg');
-        height: 22px;
-        width: 50px;
-        margin-right: 5px;
-      }
-    }
-    h2{
-      font-size: 22px !important;
-      line-height: 24px!important;
-      font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif !important;
-      font-weight:800 !important;
-    }
-}
-
-.membership-illo{
-  height: 400px;
-  width: 300px;
-  background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/liver_building.png');
-  background-position: center bottom;
-  background-size: contain;
-  position: absolute;
-  right: 18%;
-  bottom: -8px;
-  background-repeat: no-repeat;
-  z-index: 0;
-  @include mq($until:wide){
-    right: 15%;
-  }
-
-  @include mq($until:mobileLandscape){
-    display: none;
-  }
-}
-
-.week-title{
-  position: absolute;
-  left: 23%;
-  height: 36px;
-  width: 300px;
-  top: 56px;
-  background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/membership-week.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: none;
-}
-
-.content__headline--immersive-article{
-  position: relative;
-  color: white !important;
-  background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/header_background.svg');
-  top: 166px;
-  padding-top: 33px;
-  padding-left: 30px;
-  background-repeat: no-repeat;
-  display: none;
-  @include mq($until:mobileLandscape){
-    top: 109px;
-  }
-}
-
-.headline{
-  margin-left: auto;
-  margin-right: auto;
-  width: 750px;
-  position: absolute;
-  bottom: 0px;
-  left: -60px;
-  right: 0px;
-
-  @include mq($until: leftCol){
-    left: -220px;
-  }
-  @include mq($until:desktop){
-    left:20px;
-  }
-  @include mq($until:tablet){
-    left:0px;
-    width:96%;
-    bottom:0px;
-  }
-  h1{
-    color: white;
-    font-weight: 200;
-    font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
-    font-size: 46px;
-    line-height: 40px;
-    width: 600px;
-    position: relative;
-    z-index: 10;
-    margin: 20px;
-
-    @include mq($until:tablet){
-        width: 90%;
-        font-size: 32px;
-        line-height: 32px;
-    }
-  }
-
-  .header-background{
-    position: absolute;
-    left: 0;
+.immersive-main-media__headline-container {
+    background: none;
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/membership-background-two-simple.png');
     top: 0;
-    right: 0;
-    bottom: -13px;
-    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/header_background.svg');
+    bottom: auto;
+    height: 400px;
+    background-position-y: -7vw;
     background-repeat: no-repeat;
-    -ms-transform: rotate(7deg); /* IE 9 */
-    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
-    right: 148px;
+    background-size: 100%;
 
-    @include mq($until:tablet){
-      right: -13px;
-      bottom:-7px;
+    @include mq($until: tablet) {
+        background-position-y: 0px;
+        background-size: 170%;
     }
-  }
+
 }
 
-.membership-standfirst{
-  margin-bottom: 24px;
-  color: $primary-color;
-  font-size: 22px;
-  line-height: 24px;
-  font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
-  font-weight:200;
+.immersive-main-media {
+    min-height: 22rem !important;
+}
 
-  &::before{
-    content: '';
-    display: block;
-    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/line.png');
-    width: 100px;
-    height: 10px;
+.series-identity {
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/membership-background-two.svg');
     background-repeat: no-repeat;
     background-size: contain;
-  }
+    padding: 20px 30px 30px 20px;
+    position: relative;
+    top: -8px;
+    height: 20px;
+    left: 22%;
+
+    @include mq($until: wide) {
+        left: 18%;
+    }
+
+    @include mq($until: leftCol) {
+        left: 7%;
+    }
+
+    @include mq($until: mobileLandscape) {
+        top: 40px;
+        left: 0%;
+    }
+;
+
+    &:before {
+        content: 'Labour & Liverpool';
+        color: white;
+        position: absolute;
+        z-index: 20;
+        top: 13px;
+        width: 180px;
+        font-size: 18px;
+        line-height: 19px;
+        font-weight: 800;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    }
+    &:after {
+        content: 'with Ewen MacAskill';
+        color: white;
+        position: absolute;
+        z-index: 20;
+        top: 33px;
+        color: $primary-color;
+        width: 180px;
+        font-size: 18px;
+        line-height: 19px;
+        font-weight: 800;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    }
+}
+
+.membership-cutout {
+    height: 116px;
+    width: 156px;
+    background-image: url('https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2015/8/18/1439913873894/Ewen-MacAskill-R.png?w=300&q=55&auto=format&usm=12&fit=max&s=2c8dc813795a8c11dd98e28377a5893f');
+    background-position: center bottom;
+    background-size: cover;
+    float: left;
+    background-repeat: no-repeat;
+    z-index: 10;
+    margin-left: -20px;
+    margin-right: -15px;
+    @include mq($until: tablet) {
+        display: none;
+    }
+;
+
+    @include mq($until: mobileLandscape) {
+        right: -10%;
+        width: 170px;
+    }
+
+}
+
+.content__article-body {
+    p:first-of-type {
+        color: $primary-color;
+        font-size: 22px;
+        line-height: 24px;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+        font-weight: 200;
+        margin-top: 10px;
+
+        &:before {
+            display: block;
+            float: left;
+            content: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote_marks.svg');
+            height: 22px;
+            width: 50px;
+            margin-right: 5px;
+        }
+    }
+    h2 {
+        font-size: 22px !important;
+        line-height: 24px !important;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif !important;
+        font-weight: 800 !important;
+    }
+}
+
+.membership-illo {
+    height: 400px;
+    width: 300px;
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/liver_building.png');
+    background-position: center bottom;
+    background-size: contain;
+    position: absolute;
+    right: 18%;
+    bottom: -8px;
+    background-repeat: no-repeat;
+    z-index: 0;
+    @include mq($until: wide) {
+        right: 15%;
+    }
+
+    @include mq($until: mobileLandscape) {
+        display: none;
+    }
+}
+
+.week-title {
+    position: absolute;
+    left: 23%;
+    height: 36px;
+    width: 300px;
+    top: 56px;
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/membership-week.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: none;
+}
+
+.content__headline--immersive-article {
+    position: relative;
+    color: white !important;
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/header_background.svg');
+    top: 166px;
+    padding-top: 33px;
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    display: none;
+    @include mq($until: mobileLandscape) {
+        top: 109px;
+    }
+}
+
+.headline {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+    position: absolute;
+    bottom: 0px;
+    left: -60px;
+    right: 0px;
+
+    @include mq($until: leftCol) {
+        left: -220px;
+    }
+    @include mq($until: desktop) {
+        left: 20px;
+    }
+    @include mq($until: tablet) {
+        left: 0px;
+        width: 96%;
+        bottom: 0px;
+    }
+    h1 {
+        color: white;
+        font-weight: 200;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+        font-size: 46px;
+        line-height: 40px;
+        width: 600px;
+        position: relative;
+        z-index: 10;
+        margin: 20px;
+
+        @include mq($until: tablet) {
+            width: 90%;
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+
+    .header-background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: -13px;
+        background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/header_background.svg');
+        background-repeat: no-repeat;
+        -ms-transform: rotate(7deg); /* IE 9 */
+        -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+        right: 148px;
+
+        @include mq($until: tablet) {
+            right: -13px;
+            bottom: -7px;
+        }
+    }
+}
+
+.membership-standfirst {
+    margin-bottom: 24px;
+    color: $primary-color;
+    font-size: 22px;
+    line-height: 24px;
+    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    font-weight: 200;
+
+    &::before {
+        content: '';
+        display: block;
+        background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/line.png');
+        width: 100px;
+        height: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 }
 
 .content__standfirst {
-  display: none;
-}
-
-.content__labels{
-  display: none;
-}
-
-.membership-byline{
-  display: block;
-}
-
-.content__meta-container--immersive{
-  border: none !important;
-  position: absolute !important;
-  @include mq($until:leftCol){
-    position: relative !important;
-  }
-  @include mq($until:mobileLandscape){
-    position: relative!important;
-    margin-top: -7px;
-  }
-}
-
-.content__dateline{
-  display: none !important;
-}
-
-.pullquote-paragraph{
-  color: white !important;
-}
-
-.element-pullquote{
-  blockquote{
-    margin-top: 6px;
-    .pullquote-paragraph{
-      text-indent: 0px !important;
-    }
-  }
-  &.element--supporting{
-    blockquote{
-      .pullquote-paragraph{
-        color: $primary-color !important;
-      }
-    }
-  }
-  &.element--inline{
-    float: right !important;
-    width: 360px !important;
-    height: auto;
-    padding-left: 8px;
-    padding-top: 8px;
-    padding-bottom: 88px !important;
-    margin-right: -200px !important;
-    margin-left: 20px !important;
-    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/speech_bubble_flipped.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none !important;
-    background-size: cover;
-    min-height: 270px;
-
-    @include mq($until:tablet){
-      background-size: contain;
-    }
-
-    .inline-quote{
-      display: none;
-    }
-
-    blockquote{
-        margin-top: 6px;
-        margin-left: 8px;
-
-        .pullquote-paragraph, .pullquote-cite{
-          font-size: 28px !important;
-
-          @include mq($until:tablet){
-            font-size: 22px !important;
-          }
-        }
-    }
-
-    @include mq($until:desktop){
-      margin-right: -60px !important;
-    }
-
-    @include mq($until:mobileLandscape){
-      float: none;
-      width: 100% !important;
-      margin-right: 0px !important;
-      margin-left: 0px !important;
-      min-height:200px;
-    }
-  }
-  &.element--showcase{
-    float: left !important;
-    margin-left: -220px !important;
-    width: 360px !important;
-    height: auto;
-    margin-right: 20px;
-    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/speech_bubble.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding-left: 8px !important;
-    padding-top: 12px !important;
-    padding-bottom: 88px !important;
-    background-size: cover;
-    min-height: 270px;
-    margin-bottom: 0px !important;
-
-    @include mq($until:leftCol){
-      margin-left: 2px !important;
-    }
-
-    @include mq($until:tablet){
-        float: none!important;
-        margin-right: 0px !important;
-        margin-left: 0px !important;
-        width: 100% !important;
-        background-size: contain;
-        min-height:200px;
-        border:none !important;
-    }
-
-    blockquote{
-      .pullquote-paragraph, .pullquote-cite{
-        font-size: 28px !important;
-
-        @include mq($until:tablet){
-          font-size: 22px !important;
-        }
-      }
-    }
-
-    .inline-quote{
-      left: 0px !important;
-      display: none;
-    }
-  }
-}
-
-.meta__numbers{
-  display: none !important;
-}
-
-.inline-quote{
-  height: 50px !important;
-  width: 50px !important;
-  position: relative !important;
-  background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  svg{
     display: none;
-  }
 }
 
-.section-rule{
-  background-color:transparent !important;
-  background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/line.png');
-  height: 10px !important;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px !important;
+.content__labels {
+    display: none;
 }
 
-.vjs-control-bar{
-  display: none !important;
-}
-
-.vjs-control-text{
-}
-
-.gu-media-wrapper:hover{
-  .vjs-control-text{
-      &::before{
-        background-color: #4bc6df !important;
-      }
-    }
-}
-
-.gu-media-wrapper{
-  z-index: 10;
-}
-
-.element-video{
-  margin-bottom: 30px !important;
-  overflow: visible;
-  figcaption{
-    // display: none;
-    margin-top: 20px;
-    position: relative;
-    z-index: 10;
-
-    &:before{
-      display: none !important;
-    }
-
-    strong{
-      display: block;
-      font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
-      font-size: 18px;
-    }
-
-    @include mq($until:mobileLandscape){
-      margin-top: 40px;
-    }
-  }
-  &.element--showcase{
-    figcaption{
-      margin-left: 70px;
-    }
-    @include mq($until:desktop){
-      margin-bottom: 49px !important;
-      width: 20rem !important;
-      float: left;
-      margin-right: 55px;
-    }
-    @include mq($until:tablet){
-      margin-bottom: 90px !important;
-      margin-top: 24px;
-    }
-    @include mq($from:desktop){
-      width: 20rem!important;
-      float: right!important;
-      margin-left: 40px !important;
-      margin-right: -226px !important;
-      margin-top: 44px !important;
-    }
-    .membership-video-background{
-      position: absolute;
-      background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/video_background_flipped.png');
-      background-size: cover;
-      z-index: 0;
-      top: 0px;
-      margin-top: -2px;
-      margin-left: -1px;
-      width: 353px;
-      height: 264px;
-      margin-top: -23px;
-      margin-left: -18px;
-      @include mq($until:desktop){
-        width: 117% !important;
-        height: 279px !important;
-      }
-      @include mq($until:mobileLandscape){
-        height: 279px !important;
-      }
-    }
-  }
-
-  &.element--supporting{
-    figcaption{
-      margin-left: 110px;
-    }
-    @include mq($until:wide){
-      margin-bottom: 70px !important;
-    }
-    @include mq($until:desktop){
-      margin-bottom: 49px !important;
-      width: 20rem !important;
-      float: left;
-      margin-right: 55px;
-    }
-    @include mq($until:tablet){
-      margin-bottom: 90px !important;
-      margin-top: 24px;
-    }
-    @include mq($from:desktop){
-      width: 20rem!important;
-      margin-right: 40px !important;
-      margin-top:40px !important;
-    }
-    .membership-video-background{
-      position: absolute;
-      background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/video_background.png');
-      background-size: cover;
-      z-index: 0;
-      top: 0px;
-      margin-top: -2px;
-      margin-left: -1px;
-      width: 353px;
-      height: 264px;
-      margin-top: -18px;
-      margin-left: -15px;
-      @include mq($until:desktop){
-        width: 117% !important;
-        height: 279px !important;
-      }
-      @include mq($until:tablet){
-        height: 279px !important;
-      }
-    }
-  }
-  .block-share{
-    display: block !important;
-    visibility: hidden;
-  }
-}
-
-.membership-video-background{
-  position: absolute;
-  background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/video_background.png');
-  background-size: cover;
-  z-index: 0;
-  top: 0px;
-  margin-top: -2px;
-  margin-left: -1px;
-  width: 414px;
-  height:309px;
-  margin-top: -23px;
-  margin-left: -18px;
-}
-
-.membership-timeline{
-  position: absolute;
-  height: 400px;
-  width: 220px;
-  margin-left: -240px;
-  display: none;
-
-  &:before{
-    content: '';
+.membership-byline {
     display: block;
-    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/line.png');
-    width: 100px;
-    height: 10px;
-    background-repeat: no-repeat;
+}
+
+.content__meta-container--immersive {
+    border: none !important;
+    position: absolute !important;
+    @include mq($until: leftCol) {
+        position: relative !important;
+    }
+    @include mq($until: mobileLandscape) {
+        position: relative !important;
+        margin-top: -7px;
+    }
+}
+
+.content__dateline {
+    display: none !important;
+}
+
+.pullquote-paragraph {
+    color: white !important;
+}
+
+.element-pullquote {
+    blockquote {
+        margin-top: 6px;
+        .pullquote-paragraph {
+            text-indent: 0px !important;
+        }
+    }
+    &.element--supporting {
+        blockquote {
+            .pullquote-paragraph {
+                color: $primary-color !important;
+            }
+        }
+    }
+    &.element--inline {
+        float: right !important;
+        width: 360px !important;
+        height: auto;
+        padding-left: 8px;
+        padding-top: 8px;
+        padding-bottom: 88px !important;
+        margin-right: -200px !important;
+        margin-left: 20px !important;
+        background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/speech_bubble_flipped.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none !important;
+        background-size: cover;
+        min-height: 270px;
+
+        @include mq($until: tablet) {
+            background-size: contain;
+        }
+
+        .inline-quote {
+            display: none;
+        }
+
+        blockquote {
+            margin-top: 6px;
+            margin-left: 8px;
+
+            .pullquote-paragraph, .pullquote-cite {
+                font-size: 28px !important;
+
+                @include mq($until: tablet) {
+                    font-size: 22px !important;
+                }
+            }
+        }
+
+        @include mq($until: desktop) {
+            margin-right: -60px !important;
+        }
+
+        @include mq($until: mobileLandscape) {
+            float: none;
+            width: 100% !important;
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+            min-height: 200px;
+        }
+    }
+    &.element--showcase {
+        float: left !important;
+        margin-left: -220px !important;
+        width: 360px !important;
+        height: auto;
+        margin-right: 20px;
+        background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/speech_bubble.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding-left: 8px !important;
+        padding-top: 12px !important;
+        padding-bottom: 88px !important;
+        background-size: cover;
+        min-height: 270px;
+        margin-bottom: 0px !important;
+
+        @include mq($until: leftCol) {
+            margin-left: 2px !important;
+        }
+
+        @include mq($until: tablet) {
+            float: none !important;
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+            width: 100% !important;
+            background-size: contain;
+            min-height: 200px;
+            border: none !important;
+        }
+
+        blockquote {
+            .pullquote-paragraph, .pullquote-cite {
+                font-size: 28px !important;
+
+                @include mq($until: tablet) {
+                    font-size: 22px !important;
+                }
+            }
+        }
+
+        .inline-quote {
+            left: 0px !important;
+            display: none;
+        }
+    }
+}
+
+.meta__numbers {
+    display: none !important;
+}
+
+.inline-quote {
+    height: 50px !important;
+    width: 50px !important;
+    position: relative !important;
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote.png');
     background-size: contain;
-  }
-
-  .timeline-item{
-    height: 50px;
-    // background-color: aqua;
-    &::nth-child(1){
-      &:before{
-        content:'week 1';
-      }
+    background-repeat: no-repeat;
+    svg {
+        display: none;
     }
-    &::nth-child(2){
-      &:before{
-        content:'week 2';
-      }
-    }
-  }
 }
 
-iframe{
-  &.membership-form{
-    width: 600px;
-    border: none;
-    @include mq($until:tablet){
-      width: 300px;
-      height: 350px;
+.section-rule {
+    background-color: transparent !important;
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/line.png');
+    height: 10px !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px !important;
+}
+
+.vjs-control-bar {
+    display: none !important;
+}
+
+.vjs-control-text {
+}
+
+.gu-media-wrapper:hover {
+    .vjs-control-text {
+        &::before {
+            background-color: #4bc6df !important;
+        }
     }
-  }
 }
 
-.membership-footer{
-  border-top: 1px solid #4bc6df;
-  margin-top: 30px;
-  background: none;
-  background-image: url("https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/membership-background-two-simple.png");
-  background-position-y: -6vw;
-  background-position-x: 60px;
-  background-repeat: no-repeat;
-  background-size: 80%;
-  @include mq($until:mobileLandscape){
-    margin-bottom: -50px;
-  }
+.gu-media-wrapper {
+    z-index: 10;
 }
 
-.membership-footer-header{
-  margin-top: 12px;
-  font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
-  font-size:20px;
-  line-height: 22px;
-  font-weight: 800;
+.element-video {
+    margin-bottom: 30px !important;
+    overflow: visible;
+    figcaption {
+        // display: none;
+        margin-top: 20px;
+        position: relative;
+        z-index: 10;
+
+        &:before {
+            display: none !important;
+        }
+
+        strong {
+            display: block;
+            font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+            font-size: 18px;
+        }
+
+        @include mq($until: mobileLandscape) {
+            margin-top: 40px;
+        }
+    }
+    &.element--showcase {
+        figcaption {
+            margin-left: 70px;
+        }
+        @include mq($until: desktop) {
+            margin-bottom: 49px !important;
+            width: 20rem !important;
+            float: left;
+            margin-right: 55px;
+        }
+        @include mq($until: tablet) {
+            margin-bottom: 90px !important;
+            margin-top: 24px;
+        }
+        @include mq($from: desktop) {
+            width: 20rem !important;
+            float: right !important;
+            margin-left: 40px !important;
+            margin-right: -226px !important;
+            margin-top: 44px !important;
+        }
+        .membership-video-background {
+            position: absolute;
+            background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/video_background_flipped.png');
+            background-size: cover;
+            z-index: 0;
+            top: 0px;
+            margin-top: -2px;
+            margin-left: -1px;
+            width: 353px;
+            height: 264px;
+            margin-top: -23px;
+            margin-left: -18px;
+            @include mq($until: desktop) {
+                width: 117% !important;
+                height: 279px !important;
+            }
+            @include mq($until: mobileLandscape) {
+                height: 279px !important;
+            }
+        }
+    }
+
+    &.element--supporting {
+        figcaption {
+            margin-left: 110px;
+        }
+        @include mq($until: wide) {
+            margin-bottom: 70px !important;
+        }
+        @include mq($until: desktop) {
+            margin-bottom: 49px !important;
+            width: 20rem !important;
+            float: left;
+            margin-right: 55px;
+        }
+        @include mq($until: tablet) {
+            margin-bottom: 90px !important;
+            margin-top: 24px;
+        }
+        @include mq($from: desktop) {
+            width: 20rem !important;
+            margin-right: 40px !important;
+            margin-top: 40px !important;
+        }
+        .membership-video-background {
+            position: absolute;
+            background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/video_background.png');
+            background-size: cover;
+            z-index: 0;
+            top: 0px;
+            margin-top: -2px;
+            margin-left: -1px;
+            width: 353px;
+            height: 264px;
+            margin-top: -18px;
+            margin-left: -15px;
+            @include mq($until: desktop) {
+                width: 117% !important;
+                height: 279px !important;
+            }
+            @include mq($until: tablet) {
+                height: 279px !important;
+            }
+        }
+    }
+    .block-share {
+        display: block !important;
+        visibility: hidden;
+    }
+}
+
+.membership-video-background {
+    position: absolute;
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/video_background.png');
+    background-size: cover;
+    z-index: 0;
+    top: 0px;
+    margin-top: -2px;
+    margin-left: -1px;
+    width: 414px;
+    height: 309px;
+    margin-top: -23px;
+    margin-left: -18px;
+}
+
+.membership-timeline {
+    position: absolute;
+    height: 400px;
+    width: 220px;
+    margin-left: -240px;
+    display: none;
+
+    &:before {
+        content: '';
+        display: block;
+        background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/line.png');
+        width: 100px;
+        height: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .timeline-item {
+        height: 50px;
+        // background-color: aqua;
+        &::nth-child(1) {
+            &:before {
+                content: 'week 1';
+            }
+        }
+        &::nth-child(2) {
+            &:before {
+                content: 'week 2';
+            }
+        }
+    }
+}
+
+iframe {
+    &.membership-form {
+        width: 600px;
+        border: none;
+        @include mq($until: tablet) {
+            width: 300px;
+            height: 350px;
+        }
+    }
+}
+
+.membership-footer {
+    border-top: 1px solid #4bc6df;
+    margin-top: 30px;
+    background: none;
+    background-image: url("https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/membership-background-two-simple.png");
+    background-position-y: -6vw;
+    background-position-x: 60px;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    @include mq($until: mobileLandscape) {
+        margin-bottom: -50px;
+    }
+}
+
+.membership-footer-header {
+    margin-top: 12px;
+    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 800;
 }
 
 .content__meta-container {
-  display: none;
+    display: none;
+}
+
+/* Bio */
+
+@media (max-width: 61.24em) {
+    .membership-interactive__content .element--immersive.bio {
+        margin-bottom: 0px;
+    }
+}
+
+.membership-interactive__bio {
+    width: 100%;
+    height: auto;
+    bottom: 460px;
+    overflow: hidden;
+    border-top: 1px solid #ececec;
+    padding-top: 0px;
+}
+
+.membership-interactive__bio .bio-headshot {
+    width: 36%;
+    float: left;
+    margin-top: -14px;
+    overflow: hidden;
+}
+
+.membership-interactive__bio .bio-headshot img {
+    display: block;
+    width: 270px;
+    margin-left: -21px;
+    border-bottom: 1px solid #ececec;
+}
+
+.membership-interactive__bio .bio-facebook, .membership-interactive__bio .bio-twitter {
+    background-color: #ededed;
+    padding: 6px 20px;
+    border-radius: 20px;
+    width: auto;
+    font-size: 14px;
+    width: auto;
+    margin-top: 6px;
+    margin-left: 20px;
+    font-family: 'Guardian Text Sans Web', 'Guardian Agate Sans 1 Web';
+    color: #005689;
+    font-weight: 600;
+    overflow: auto;
+    float: left;
+}
+
+.membership-interactive__bio .bio-text {
+    font-family: "Guardian Text Egyptian Web";
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 20px;
+    float: left;
+    width: 60%;
+    height: auto;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.membership-interactive__bio .bio-text h1 {
+    font-size: 18px;
+    font-family: "Guardian Egyptian Web";
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 16px;
+    margin-top: 4px;
 }

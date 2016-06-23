@@ -88,10 +88,10 @@ define([], function () {
                 var bioTwitter = document.createElement('div');
                 var bioText = document.createElement('div');
 
-                bioImage.setAttribute('src', 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2015/8/18/1439913873894/Ewen-MacAskill-R.png?w=300&amp;q=55&amp;auto=format&amp;usm=12&amp;fit=max&amp;s=2c8dc813795a8c11dd98e28377a5893f');
+                bioImage.setAttribute('src', 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2015/8/18/1439913873894/Ewen-MacAskill-R.png?w=300&q=55&auto=format&usm=12&fit=max&s=2c8dc813795a8c11dd98e28377a5893f');
                 bioHeadshot.setAttribute('class', 'bio-headshot');
                 bio.setAttribute('class', 'membership-interactive__bio');
-                bioContainer.setAttribute('class', 'element--immersive bio');
+                bioContainer.setAttribute('class', 'element--immersive bio gs-container');
                 bioTwitter.setAttribute('class', 'bio-twitter');
                 bioLinks.setAttribute('class', 'bio-links');
                 bioText.setAttribute('class', 'bio-text');
@@ -135,7 +135,7 @@ define([], function () {
             }
 
             if (document.querySelector('.content--immersive-article')) {
-                addCss('https://s3.amazonaws.com/gdn-cdn/membership-article-two/style.css'/*'https://localhost:9000/style/style.css'*/);
+                addCss('https://s3.amazonaws.com/gdn-cdn/membership-article-two/style.css'/*'/style.css'*/);
                 addHeaderElement('week-title');
                 addHeaderElement('series-identity');
                 addHeader('headline');
@@ -145,7 +145,7 @@ define([], function () {
                 }
                 addLinks();
                 addBio();
-                //addFooter();
+                addFooter();
             }
         }
     };
