@@ -664,55 +664,55 @@ iframe {
     overflow: hidden;
     border-top: 1px solid #ececec;
     padding-top: 0px;
-}
 
-.membership-interactive__bio .bio-headshot {
-    width: 36%;
-    float: left;
-    margin-top: -14px;
-    overflow: hidden;
-}
+    .bio-headshot {
+        width: 36%;
+        float: left;
+        margin-top: -14px;
+        overflow: hidden;
 
-.membership-interactive__bio .bio-headshot img {
-    display: block;
-    width: 270px;
-    margin-left: -21px;
-    border-bottom: 1px solid #ececec;
-}
+        img {
+            display: block;
+            width: 270px;
+            margin-left: -21px;
+            border-bottom: 1px solid #ececec;
+        }
+    }
 
-.membership-interactive__bio .bio-facebook, .membership-interactive__bio .bio-twitter {
-    background-color: #ededed;
-    padding: 6px 20px;
-    border-radius: 20px;
-    width: auto;
-    font-size: 14px;
-    width: auto;
-    margin-top: 6px;
-    margin-left: 20px;
-    font-family: 'Guardian Text Sans Web', 'Guardian Agate Sans 1 Web';
-    color: #005689;
-    font-weight: 600;
-    overflow: auto;
-    float: left;
-}
+    .bio-facebook, .bio-twitter {
+        background-color: #ededed;
+        padding: 6px 20px;
+        border-radius: 20px;
+        width: auto;
+        font-size: 14px;
+        width: auto;
+        margin-top: 6px;
+        margin-left: 20px;
+        font-family: 'Guardian Text Sans Web', 'Guardian Agate Sans 1 Web';
+        color: #005689;
+        font-weight: 600;
+        overflow: auto;
+        float: left;
+    }
 
-.membership-interactive__bio .bio-text {
-    font-family: "Guardian Text Egyptian Web";
-    font-size: 14px;
-    line-height: 18px;
-    margin-left: 20px;
-    float: left;
-    width: 60%;
-    height: auto;
-    margin-top: 8px;
-    margin-bottom: 12px;
-}
+    .bio-text {
+        font-family: "Guardian Text Egyptian Web";
+        font-size: 14px;
+        line-height: 18px;
+        margin-left: 20px;
+        float: left;
+        width: 60%;
+        height: auto;
+        margin-top: 8px;
+        margin-bottom: 12px;
 
-.membership-interactive__bio .bio-text h1 {
-    font-size: 18px;
-    font-family: "Guardian Egyptian Web";
-    font-weight: 400;
-    color: #333;
-    margin-bottom: 16px;
-    margin-top: 4px;
+        h1 {
+            font-size: 18px;
+            font-family: "Guardian Egyptian Web";
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 16px;
+            margin-top: 4px;
+        }
+    }
 }

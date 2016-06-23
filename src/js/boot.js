@@ -80,6 +80,7 @@ define([], function () {
 
             function addBio() {
                 var main = document.getElementsByClassName('content__main');
+                var bioColumn = document.createElement('div');
                 var bioContainer = document.createElement('aside');
                 var bio = document.createElement('div');
                 var bioHeadshot = document.createElement('div');
@@ -91,6 +92,7 @@ define([], function () {
                 bioImage.setAttribute('src', 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2015/8/18/1439913873894/Ewen-MacAskill-R.png?w=300&q=55&auto=format&usm=12&fit=max&s=2c8dc813795a8c11dd98e28377a5893f');
                 bioHeadshot.setAttribute('class', 'bio-headshot');
                 bio.setAttribute('class', 'membership-interactive__bio');
+                bioColumn.setAttribute('class', 'content__main-column');
                 bioContainer.setAttribute('class', 'element--immersive bio gs-container');
                 bioTwitter.setAttribute('class', 'bio-twitter');
                 bioLinks.setAttribute('class', 'bio-links');
@@ -114,7 +116,8 @@ define([], function () {
                 bioHeadshot.appendChild(bioLinks);
                 bio.appendChild(bioHeadshot);
                 bio.appendChild(bioText);
-                bioContainer.appendChild(bio);
+                bioColumn.appendChild(bio);
+                bioContainer.appendChild(bioColumn);
                 main[0].appendChild(bioContainer);
             }
 
