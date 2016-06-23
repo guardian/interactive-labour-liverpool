@@ -214,23 +214,23 @@ module.exports = function(grunt) {
     grunt.registerTask('loadDeployConfig', function() {
         grunt.config('visuals', {
             s3: grunt.file.readJSON('./cfg/s3.json'),
-            timestamp: Date.now(),
+            timestamp: '1',
             jspmFlags: '-m',
-            assetPath: '<%= visuals.s3.domain %><%= visuals.s3.path %>/<%= visuals.timestamp %>'
+            assetPath: '<%= visuals.s3.domain %><%= visuals.s3.path %>/<%= visuals.timestamp %>',
         });
-    })
+    });
 
     grunt.registerTask('boot_url', function() {
-        grunt.log.write('\nBOOT URL: '['green'].bold)
-        grunt.log.writeln(grunt.template.process('<%= visuals.s3.domain %><%= visuals.s3.path %>/boot.js'))
+        grunt.log.write('\nBOOT URL: '['green'].bold);
+        grunt.log.writeln(grunt.template.process('<%= visuals.s3.domain %><%= visuals.s3.path %>/boot.js'));
 
-        grunt.log.write('\nEMBED URL: '['green'].bold)
-        grunt.log.writeln(grunt.template.process('<%= visuals.s3.domain %><%= visuals.s3.path %>/embed/embed.html'))
+        grunt.log.write('\nEMBED URL: '['green'].bold);
+        grunt.log.writeln(grunt.template.process('<%= visuals.s3.domain %><%= visuals.s3.path %>/embed/embed.html'));
     })
 
     grunt.registerTask('embed', ['shell:embed', 'template:embed', 'sass:embed']);
     grunt.registerTask('interactive', ['shell:interactive', 'template:bootjs', 'sass:interactive']);
-    grunt.registerTask('all', ['interactive', 'embed', 'copy:assets'])
+    grunt.registerTask('all', ['interactive', 'embed', 'copy:assets']);
     grunt.registerTask('default', ['clean', 'copy:harness', 'all', 'connect', 'watch']);
     grunt.registerTask('build', ['clean', 'all']);
     grunt.registerTask('deploy', ['loadDeployConfig', 'prompt:visuals', 'build', 'copy:deploy', 'aws_s3', 'boot_url']);

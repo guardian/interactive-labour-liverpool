@@ -138,7 +138,7 @@ define([], function () {
             }
 
             if (document.querySelector('.content--immersive-article')) {
-                addCss('https://interactive.guim.co.uk/interactive-labour-liverpool/style.css');
+                addCss('https://interactive.guim.co.uk/testing/2016/06/interactive-labour-liverpool/1/style.css');
                 addHeaderElement('week-title');
                 addHeaderElement('series-identity');
                 addHeader('headline');
