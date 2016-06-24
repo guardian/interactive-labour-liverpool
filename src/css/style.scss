@@ -612,18 +612,20 @@ $primary-color: #6fa19a;
     }
 }
 
-iframe {
-    &.membership-form {
-        width: 600px;
-        border: none;
-        @include mq($until: tablet) {
-            width: 300px;
-            height: 350px;
-        }
+.membership-form {
+    border: none;
+}
+
+@media (device-height: 1024px) and (device-width: 768px) and (orientation: portrait), (device-height: 1024px) and (device-width: 768px) and (orientation: landscape) {
+    .membership-form {
+        height: 450px;
     }
 }
 
 .membership-footer {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
     border-top: 1px solid #4bc6df;
     margin-top: 30px;
     background: none;
@@ -643,77 +645,129 @@ iframe {
     font-size: 20px;
     line-height: 22px;
     font-weight: 800;
+    width: 100%;
 }
 
 .content__meta-container {
     display: none;
 }
 
-/* Bio */
-
-@media (max-width: 61.24em) {
-    .membership-interactive__content .element--immersive.bio {
-        margin-bottom: 0px;
+@media(min-width: 46.25em) {
+    .membership-footer {
+        width: 75%;
+        padding-right: 5em;
     }
 }
 
-.membership-interactive__bio {
-    width: 100%;
-    height: auto;
-    bottom: 460px;
+/* Bio */
+
+$f-serif-headline: "Guardian Egyptian Web", Georgia, serif;
+$lightBlue: #00b0ce;
+$f-sans-serif-text: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+#contact-ewen-section {
     overflow: hidden;
-    border-top: 1px solid #ececec;
-    padding-top: 0px;
-
-    .bio-headshot {
-        width: 36%;
+    display: inline-block;
+    margin: 30px 0;
+    .ewen-textbox {
+        width: 50%;
         float: left;
-        margin-top: -14px;
-        overflow: hidden;
-
+        max-width: 200px;
         img {
+            width: 100%;
+            max-width: 140px;
+        }
+    }
+    .textbox-container {
+        background-color: #577DA0;
+        background-image: url(assets/imgs/video-mask.png);
+        background-size: 100% 100%;
+        color: #fff;
+        padding: 8px 8px 34px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: $f-serif-headline;
+        max-width: 140px;
+        line-height: 1.1em;
+
+    }
+    .contact-buttons {
+        width: calc(50% - 20px);
+        margin-left: 20px;
+        float: left;
+        margin-top: 190px;
+        max-width: 180px;
+        a {
             display: block;
-            width: 270px;
-            margin-left: -21px;
-            border-bottom: 1px solid #ececec;
+            padding: 9px 6px 9px 36px;
+            color: #fff;
+            background-color: $lightBlue;
+            font-weight: bold;
+            font-family: $f-sans-serif-text;
+            border-radius: 20px;
+            margin: 6px 0 0;
+            font-size: 12px;
+            position: relative;
+            line-height: 1em;
+            &:before {
+                display: block;
+                content: '';
+                width: 24px;
+                height: 24px;
+                border-radius: 30px;
+                background: red;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                background-size: 24px;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+        }
+        .contact-twitter:before {
+            background-color: #01C0ED;
+            background-image: url(assets/imgs/twitter.svg);
+        }
+        .contact-facebook:before {
+            background-color: #397CAF;
+            background-image: url(assets/imgs/facebook.svg);
+        }
+        .contact-mail:before {
+            background-color: #767676;
+            background-image: url(assets/imgs/mail.svg);
+        }
+
+    }
+}
+
+@media(min-width: 30em) {
+    #contact-ewen-section {
+        width: 100%;
+        border-top: 1px solid #4bc6df;
+        vertical-align: top;
+        .ewen-textbox {
+            margin-top: 12px;
+            width: 100%;
+            float: none;
+            img {
+                max-width: 90px;
+            }
+        }
+        .contact-buttons {
+            width: 100%;
+            margin: 0;
         }
     }
+}
 
-    .bio-facebook, .bio-twitter {
-        background-color: #ededed;
-        padding: 6px 20px;
-        border-radius: 20px;
-        width: auto;
-        font-size: 14px;
-        width: auto;
-        margin-top: 6px;
-        margin-left: 20px;
-        font-family: 'Guardian Text Sans Web', 'Guardian Agate Sans 1 Web';
-        color: #005689;
-        font-weight: 600;
-        overflow: auto;
-        float: left;
+@media(min-width: 46.25em) {
+    #contact-ewen-section {
+        width: 25%;
     }
+}
 
-    .bio-text {
-        font-family: "Guardian Text Egyptian Web";
-        font-size: 14px;
-        line-height: 18px;
-        margin-left: 20px;
-        float: left;
-        width: 60%;
-        height: auto;
-        margin-top: 8px;
-        margin-bottom: 12px;
-
-        h1 {
-            font-size: 18px;
-            font-family: "Guardian Egyptian Web";
-            font-weight: 400;
-            color: #333;
-            margin-bottom: 16px;
-            margin-top: 4px;
-        }
+@media(min-width: 61.24em) {
+    #contact-ewen-section {
     }
 }
 
