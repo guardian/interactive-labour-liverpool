@@ -613,11 +613,12 @@ $primary-color: #6fa19a;
 }
 
 .membership-form {
-    //width: 600px;
     border: none;
-    @include mq($until: tablet) {
-        //width: 300px;
-        //height: 350px;
+}
+
+@media (device-height: 1024px) and (device-width: 768px) and (orientation: portrait), (device-height: 1024px) and (device-width: 768px) and (orientation: landscape) {
+    .membership-form {
+        height: 450px;
     }
 }
 
@@ -644,6 +645,7 @@ $primary-color: #6fa19a;
     font-size: 20px;
     line-height: 22px;
     font-weight: 800;
+    width: 100%;
 }
 
 .content__meta-container {
@@ -666,6 +668,7 @@ $f-sans-serif-text: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial
 #contact-ewen-section {
     overflow: hidden;
     display: inline-block;
+    margin: 30px 0;
     .ewen-textbox {
         width: 50%;
         float: left;
@@ -739,13 +742,11 @@ $f-sans-serif-text: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial
 
 @media(min-width: 30em) {
     #contact-ewen-section {
-        //width: 140px;
-        //position: absolute;
-        //left: 640px;
-        //top: 20px;
-        //max-width: 140px;
         width: 100%;
+        border-top: 1px solid #4bc6df;
+        vertical-align: top;
         .ewen-textbox {
+            margin-top: 12px;
             width: 100%;
             float: none;
             img {
@@ -761,14 +762,12 @@ $f-sans-serif-text: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial
 
 @media(min-width: 46.25em) {
     #contact-ewen-section {
-        //left: 780px;
         width: 25%;
     }
 }
 
 @media(min-width: 61.24em) {
     #contact-ewen-section {
-        //left:860px;
     }
 }
 
