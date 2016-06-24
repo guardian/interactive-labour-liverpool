@@ -129,6 +129,7 @@ define([], function () {
                 footerHeader.innerHTML = 'Sign up for the Labour and Liverpool Newsletter';
                 footerSlice.innerHTML = '<iframe id="iframe_id" class="membership-form" height="350px" width="100%" src="https://s3.amazonaws.com/gdn-cdn/embed/labour-and-liverpool-forms/emailform.html"></iframe>';
                 footer.setAttribute('class', 'membership-footer');
+                footer.id = 'footer';
                 footer.appendChild(footerHeader);
                 footer.appendChild(footerSlice);
 
