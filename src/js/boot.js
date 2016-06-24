@@ -78,7 +78,7 @@ define([], function () {
                 body[0].insertBefore(timeline, child);
             }
 
-            function addBio() {
+            function buildBio() {
                 function buildTextBox() {
                     var textBox = document.createElement('div');
                     var quote = document.createElement('div');
@@ -111,28 +111,41 @@ define([], function () {
                     return contactButtons;
                 }
                 var bio = document.createElement('div');
-                var main = document.getElementsByClassName('content__main');
 
                 bio.setAttribute('id', 'contact-ewen-section');
                 bio.appendChild(buildTextBox());
                 bio.appendChild(buildContactButtons());
-                main[0].appendChild(bio);
+
+                return bio;
+            }
+
+            function buildFooter() {
+                var footer = document.createElement('div');
+                var footerHeader = document.createElement('div');
+                var footerSlice = document.createElement('div');
+
+                footerHeader.setAttribute('class', 'fc-container__header membership-footer-header');
+                footerSlice.setAttribute('class', 'fc-slice-wrapper');
+                footerHeader.innerHTML = 'Sign up for the Labour and Liverpool Newsletter';
+                footerSlice.innerHTML = '<iframe id="iframe_id" class="membership-form" height="350px" width="100%" src="https://s3.amazonaws.com/gdn-cdn/embed/labour-and-liverpool-forms/emailform.html"></iframe>';
+                footer.setAttribute('class', 'membership-footer');
+                footer.appendChild(footerHeader);
+                footer.appendChild(footerSlice);
+
+                return footer;
             }
 
             function addFooter() {
                 var main = document.getElementsByClassName('content__main');
-                var footer = document.createElement('div');
                 var footerContainer = document.createElement('div');
-                var footerHeader = document.createElement('div');
-                var footerSlice = document.createElement('div');
-                footerHeader.setAttribute('class', 'fc-container__header membership-footer-header');
-                footerSlice.setAttribute('class', 'fc-slice-wrapper');
-                footerHeader.innerHTML = "Sign up for the Labour and Liverpool Newsletter";
-                footerSlice.innerHTML = '<iframe id="iframe_id" class="membership-form" height="310px" width="100%" src="https://s3.amazonaws.com/gdn-cdn/embed/labour-and-liverpool-forms/emailform.html"></iframe>';
-                footer.setAttribute('class', 'membership-footer gs-container');
-                footer.appendChild(footerHeader);
-                footer.appendChild(footerSlice);
-                main[0].appendChild(footer);
+                var footer = buildFooter();
+                var bio = buildBio();
+
+                footerContainer.setAttribute('class', 'gs-container');
+                footerContainer.appendChild(footer);
+                footerContainer.appendChild(bio);
+
+                main[0].appendChild(footerContainer);
             }
 
             function addBox() {
