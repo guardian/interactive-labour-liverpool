@@ -137,6 +137,18 @@ define([], function () {
                 main[0].appendChild(footer);
             }
 
+            function addBox() {
+                var container = document.querySelector('.js-article__body');
+                var paragraph = container.querySelectorAll('p')[9];
+
+                var box = document.createElement('figure');
+                box.setAttribute('class', 'element element-interactive interactive element--supporting');
+                box.setAttribute('stlye', 'height: 100%;');
+                box.innerHTML = '<div class="supporting-text"> <h1 class="supporting-text__header"> Join us as we launch an innovative form of collaborative journalism </h1> <p class="supporting-text__content"> Follow a Guardian journalist as they dig into a topic off the beaten news track, track their working out as they go, and contribute ideas, suggestions and feedback. With weekly updates, we hope to keep interested readers updated but not inundated on the issues they care about, and give them the chance to collaborate in our reporting. </p> <a class="supporting-text__footer" href="#footer">Sign up to the Labour &amp; Liverpool newsletter</a></div>';
+                    
+                container.insertBefore(box, paragraph);
+            }
+
             if (document.querySelector('.content--immersive-article')) {
                 addCss('https://interactive.guim.co.uk/testing/2016/06/interactive-labour-liverpool/1/style.css');
                 addHeaderElement('week-title');
@@ -149,6 +161,7 @@ define([], function () {
                 addLinks();
                 addBio();
                 addFooter();
+                addBox();
             }
         }
     };
