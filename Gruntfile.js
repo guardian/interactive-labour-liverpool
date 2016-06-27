@@ -16,7 +16,9 @@ module.exports = function(grunt) {
                       pattern: /<svg.*<\/svg>/i,
                       prepend: 'data:image/svg+xml;base64,'
                     }),
-                    require('cssnano')()
+                    require('cssnano')({
+                      normalizeUrl: false
+                    })
                 ]
             },
             dist: {
