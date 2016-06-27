@@ -32,23 +32,6 @@ define([], function () {
                 header[0].appendChild(cutout);
             }
 
-            function formatHeader() {
-                var pageHeader = document.getElementsByClassName('content__headline');
-                var headerContent = pageHeader[0].innerHTML;
-                var headerAmended = headerContent.split('-');
-                pageHeader[0].innerHTML = headerAmended[0] + '<span class="membership-byline">' + headerAmended[1] + '</span>';
-            }
-
-            function formatStandFirst() {
-                var standfirst = document.getElementsByClassName('content__standfirst');
-                var body = document.getElementsByClassName('content__article-body');
-                var child = body[0].childNodes[0];
-                var newStandfirst = document.createElement('div');
-                newStandfirst.setAttribute('class', 'membership-standfirst');
-                newStandfirst.innerHTML = standfirst[0].innerText;
-                body[0].insertBefore(newStandfirst, child);
-            }
-
             function addCutout() {
                 var cutOut = document.createElement('div');
                 cutOut.setAttribute('class', 'membership-cutout');
@@ -76,6 +59,15 @@ define([], function () {
                 timeline.appendChild(timeLineItem);
                 timeline.appendChild(timeLineItemTwo);
                 body[0].insertBefore(timeline, child);
+            }
+
+            function removeLabourTagLink() {
+                var firstPara = document.querySelectorAll('.content__article-body p')[0];
+                var labourLink = firstPara.getElementsByTagName('a')[0];
+                var labourText = document.createElement('span');
+
+                labourText.innerHTML = labourLink.innerHTML;
+                firstPara.replaceChild(labourText, labourLink);
             }
 
             function buildBio() {
@@ -164,6 +156,7 @@ define([], function () {
             }
 
             if (document.querySelector('.content--immersive-article')) {
+                removeLabourTagLink();
                 addCss('https://interactive.guim.co.uk/testing/2016/06/interactive-labour-liverpool/1/style.css');
                 addHeaderElement('week-title');
                 addHeaderElement('series-identity');
