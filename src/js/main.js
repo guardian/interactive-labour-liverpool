@@ -155,7 +155,6 @@ function addBox() {
 export function init(el, context, config, mediator) {
     if (document.querySelector('.content--immersive-article')) {
         removeLabourTagLink();
-        addCss('https://interactive.guim.co.uk/testing/2016/06/interactive-labour-liverpool/1/style.css');
         addHeaderElement('week-title');
         addHeaderElement('series-identity');
         addHeader('headline');
