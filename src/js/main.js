@@ -8,6 +8,24 @@
     head.appendChild(el);
 }
 
+ function addLogoHeaderElement(element) {
+     var titleLink = document.createElement('a');
+     var bylineLink = document.createElement('a');
+     var cutout = document.createElement('div');
+     var header = document.getElementsByClassName('tonal content--immersive-article');
+
+     titleLink.setAttribute('href', 'https://www.theguardian.com/membership/ng-interactive/2016/jun/23/labour-liverpool');
+     titleLink.setAttribute('class', 'series-identity-title');
+     titleLink.innerHTML = 'Labour & Liverpool';
+     bylineLink.setAttribute('href', 'https://www.theguardian.com/membership/ng-interactive/2016/jun/23/labour-liverpool');
+     bylineLink.setAttribute('class', 'series-identity-byline');
+     bylineLink.innerHTML = 'with Ewen MacAskill';
+     cutout.setAttribute('class', element);
+     cutout.appendChild(titleLink);
+     cutout.appendChild(bylineLink);
+     header[0].appendChild(cutout);
+ }
+
 function addHeaderElement(element) {
     var cutout = document.createElement('div');
     var header = document.getElementsByClassName('tonal content--immersive-article');
@@ -156,7 +174,7 @@ export function init(el, context, config, mediator) {
     if (document.querySelector('.content--immersive-article')) {
         removeLabourTagLink();
         addHeaderElement('week-title');
-        addHeaderElement('series-identity');
+        addLogoHeaderElement('series-identity');
         addHeader('headline');
         addCutout();
         for (var i = 0; i < document.getElementsByClassName('element-video').length; i++) {
