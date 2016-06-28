@@ -53,6 +53,7 @@ $primary-color: #6fa19a;
 
     @include mq($until: wide) {
         left: 18%;
+        width: 300px;
     }
 
     @include mq($until: leftCol) {
@@ -63,32 +64,29 @@ $primary-color: #6fa19a;
         top: 40px;
         left: 0%;
     }
-;
 
-    &:before {
-        content: 'Labour & Liverpool';
-        color: white;
+    .series-identity-title, .series-identity-byline {
         position: absolute;
         z-index: 20;
-        top: 13px;
         width: 180px;
         font-size: 18px;
         line-height: 19px;
         font-weight: 800;
         font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
-    &:after {
-        content: 'with Ewen MacAskill';
+
+    .series-identity-title {
         color: white;
-        position: absolute;
-        z-index: 20;
-        top: 33px;
+        top: 13px;
+    }
+
+    .series-identity-byline {
         color: $primary-color;
-        width: 180px;
-        font-size: 18px;
-        line-height: 19px;
-        font-weight: 800;
-        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+        top: 33px;
     }
 }
 
