@@ -5,9 +5,6 @@ module.exports = function(grunt) {
     require('jit-grunt')(grunt);
 
     grunt.initConfig({
-
-        visuals: { },
-
         postcss: {
             options: {
                 processors: [
@@ -66,7 +63,7 @@ module.exports = function(grunt) {
 
         shell: {
             interactive: {
-                command: './node_modules/.bin/jspm bundle-sfx <%= visuals.jspmFlags %> src/js/main build/main.js --format amd',
+                command: './node_modules/.bin/jspm bundle-sfx <%= visuals.jspmFlags %> src/js/boot build/boot.js --format amd',
                 options: {
                     execOptions: {
                         cwd: '.'
@@ -87,11 +84,12 @@ module.exports = function(grunt) {
             'options': {
                 'data': {
                     'assetPath': '<%= visuals.assetPath %>',
+                    'warningCommentForGeneratedFile': 'GENERATED FROM TEMPLATE: DO NOT EDIT'
                 }
             },
             'bootjs': {
                 'files': {
-                    'build/boot.js': ['src/js/boot.js'],
+                    'src/js/boot.js': ['src/js/boot.js.tpl'],
                 }
             },
             'embed': {
@@ -218,6 +216,7 @@ module.exports = function(grunt) {
                         middlewares.unshift(function (req, res, next) {
                             res.setHeader('Access-Control-Allow-Origin', '*');
                             res.setHeader('Access-Control-Allow-Methods', '*');
+
                             return next();
                         });
                         return middlewares;
@@ -236,6 +235,12 @@ module.exports = function(grunt) {
         });
     });
 
+    grunt.registerTask('loadLocalConfig', function() {
+        grunt.config('visuals', {
+            assetPath: 'http://localhost:8000'
+        });
+    });
+
     grunt.registerTask('boot_url', function() {
         grunt.log.write('\nBOOT URL: '['green'].bold);
         grunt.log.writeln(grunt.template.process('<%= visuals.s3.domain %><%= visuals.s3.path %>/boot.js'));
@@ -245,9 +250,9 @@ module.exports = function(grunt) {
     })
 
     grunt.registerTask('embed', ['shell:embed', 'template:embed', 'sass:embed']);
-    grunt.registerTask('interactive', ['shell:interactive', 'template:bootjs', 'sass:interactive']);
+    grunt.registerTask('interactive', ['template:bootjs', 'shell:interactive', 'sass:interactive']);
     grunt.registerTask('all', ['interactive', 'embed', 'postcss', 'copy:assets']);
-    grunt.registerTask('default', ['clean', 'copy:harness', 'all', 'connect', 'watch']);
+    grunt.registerTask('default', ['loadLocalConfig', 'clean', 'copy:harness', 'all', 'connect', 'watch']);
     grunt.registerTask('build', ['clean', 'all']);
     grunt.registerTask('deploy', ['loadDeployConfig', 'prompt:visuals', 'build', 'copy:deploy', 'aws_s3', 'boot_url']);
 

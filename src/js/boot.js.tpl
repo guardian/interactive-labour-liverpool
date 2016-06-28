@@ -1,5 +1,5 @@
 /************************************
-GENERATED FROM TEMPLATE: DO NOT EDIT
+<%= warningCommentForGeneratedFile %>
 ************************************/
 
 import {init} from './main';
@@ -15,9 +15,9 @@ function addCSS(url) {
 
 export function boot(el, context, config, mediator) {
     config = {
-        'assetPath': 'https://interactive.guim.co.uk/testing/2016/06/interactive-labour-liverpool-article-2/1'
+        'assetPath': '<%= assetPath %>'
     };
 
-    addCSS('https://interactive.guim.co.uk/testing/2016/06/interactive-labour-liverpool-article-2/1/style.css');
+    addCSS('<%= assetPath %>/style.css');
     init(el, context, config, mediator);
 }
