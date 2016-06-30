@@ -801,22 +801,25 @@ $shadow-height: 18px;
 }
 
 .supporting-text__header {
-    font-family: 'Guardian Sans Web' , 'Guardian Agate Sans 1 Web';
     font-size: 20px;
-    line-height: 21px;
+    line-height: 24px;
+    font-family: Guardian Egyptian Web,Georgia,serif;
+    font-weight: 900;
+    min-height: 24px;
+    padding-bottom: 18px;
     margin-bottom: 8px;
 }
 .supporting-text__content {
-    font-family: 'Guardian Sans Web' , 'Guardian Agate Sans 1 Web';
     font-size: 14px;
-    font-weight: normal;
-    line-height: 18px;
+    line-height: 20px;
+    font-family: Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    font-weight: 700;
     margin: 0 0 $baseline/2 0;
 }
 .supporting-text__footer {
-    font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: Guardian Egyptian Web,Georgia,serif;
     margin: 0 0 $baseline/2 0;
     color: #ffffff;
     text-decoration: none;
