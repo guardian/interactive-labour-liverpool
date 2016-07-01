@@ -828,3 +828,9 @@ $shadow-height: 18px;
 .element-rich-link {
     display: none;
 }
+.article__headline{
+  &.headline{
+    position: relative;
+    margin: 0;
+  }
+}
