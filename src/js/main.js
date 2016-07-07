@@ -165,7 +165,7 @@ function addBox() {
     var box = document.createElement('figure');
     box.setAttribute('class', 'element element-interactive interactive element--supporting');
     box.setAttribute('style', 'height: 100%;');
-    box.innerHTML = '<div class="supporting-text"> <h1 class="supporting-text__header"> Join us as we launch an innovative form of collaborative journalism </h1> <p class="supporting-text__content"> Follow a Guardian journalist as they dig into a topic off the beaten news track, track their working out as they go, and contribute ideas, suggestions and feedback. With weekly updates, we hope to keep interested readers updated but not inundated on the issues they care about, and give them the chance to collaborate in our reporting. </p> <a class="supporting-text__footer" href="#footer">Sign up to the Labour &amp; Liverpool newsletter</a></div>';
+    box.innerHTML = '<div class="supporting-text"> <h1 class="supporting-text__header">What is Labour & Liverpool?</h1> <p class="supporting-text__content">This weekly series, led by Ewen MacAskill and guided by you, turns a spotlight on the Labour party. It is an experiment in collaborative reporting: we need you to contribute ideas, suggestions and feedback as Ewen visits Liverpool – bastion of Labour and lens through which we hope to understand the party – in the run-up to September’s party conference in the city. Weekly reports should keep you updated but not inundated.</p></div>';
 
     container.insertBefore(box, paragraph);
 }
