@@ -81,8 +81,10 @@ function removeLabourTagLink() {
     var labourLink = firstPara.getElementsByTagName('a')[0];
     var labourText = document.createElement('span');
 
-    labourText.innerHTML = labourLink.innerHTML;
-    firstPara.replaceChild(labourText, labourLink);
+    if (labourLink) {
+        labourText.innerHTML = labourLink.innerHTML;
+        firstPara.replaceChild(labourText, labourLink);
+    }
 }
 
 function buildBio() {
