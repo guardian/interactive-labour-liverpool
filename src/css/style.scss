@@ -13,6 +13,32 @@ $mq-breakpoints: (
 
 $primary-color: #6fa19a;
 
+.content__article-body {
+    & > p:first-of-type {
+        color: $primary-color;
+        font-size: 22px;
+        line-height: 24px;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+        font-weight: 200;
+        margin-top: 10px;
+
+        &:before {
+            display: block;
+            float: left;
+            content: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote_marks.svg');
+            height: 22px;
+            width: 50px;
+            margin-right: 5px;
+        }
+    }
+    h2 {
+        font-size: 22px !important;
+        line-height: 24px !important;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif !important;
+        font-weight: 800 !important;
+    }
+}
+
 .membership-illo {
     height: 400px;
     width: 300px;
