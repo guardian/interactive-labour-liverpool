@@ -1,3 +1,14 @@
+function removeLabourTagLink() {
+    var firstPara = document.querySelectorAll('.content__article-body p')[0];
+    var labourLink = firstPara.getElementsByTagName('a')[0];
+    var labourText = document.createElement('span');
+
+    if (labourLink) {
+        labourText.innerHTML = labourLink.innerHTML;
+        firstPara.replaceChild(labourText, labourLink);
+    }
+}
+
 function addVideoStyle(el, index) {
     var videoEl = document.createElement('div');
     var video = document.getElementsByClassName(el);
@@ -27,6 +38,7 @@ function addBox() {
 
 export function init(el, context, config, mediator) {
     if (document.querySelector('.content--labour-liverpool-article')) {
+        removeLabourTagLink();
         addCutout();
         for (var i = 0; i < document.getElementsByClassName('element-video').length; i++) {
             addVideoStyle('element-video', i);
