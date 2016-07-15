@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             dist: {
                 src: 'build/*.css'
             }
-        },        
+        },
 
         watch: {
             js: {
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 
         shell: {
             interactive: {
-                command: './node_modules/.bin/jspm bundle-sfx <%= visuals.jspmFlags %> src/js/boot build/boot.js --format amd',
+                command: './node_modules/.bin/jspm bundle-sfx <%= visuals.jspmFlags %> src/js/boot build/boot.js --format amd --source-map-contents',
                 options: {
                     execOptions: {
                         cwd: '.'
