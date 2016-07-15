@@ -26,7 +26,7 @@ function addCutout() {
 
 function addBox() {
     var container = document.querySelector('.js-article__body');
-    var paragraph = container.querySelectorAll('p')[9];
+    var paragraph = document.querySelectorAll('.js-article__body>p')[9];
 
     var box = document.createElement('figure');
     box.setAttribute('class', 'element element-interactive interactive element--supporting');
