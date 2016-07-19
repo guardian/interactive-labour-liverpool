@@ -479,3 +479,21 @@ $shadow-height: 18px;
     margin: 0;
   }
 }
+.quoted__contents{
+  color: #005689;
+  font-family: $f-sans-serif-text;
+  font-style: normal;
+
+  &::before{
+    content:'';
+    width: 36px;
+    height: 50px;
+    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote_marks.svg');
+    background-size: contain;
+    display: block;
+    position: absolute;
+    left: -3px;
+    margin-top:1px;
+    background-repeat: no-repeat;
+  }
+}
