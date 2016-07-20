@@ -36,17 +36,27 @@ function addBox() {
     container.insertBefore(box, paragraph);
 }
 
-function addPartNumber() {
+function addLightBox(){
+  var link = '<a href="#img-2" class="article__img-container js-gallerythumbs" data-link-name="Launch Article Lightbox" data-is-ajax="">';
+  var linkEnd = '</a>';
+  var expander = '<span class="inline-expand-image inline-icon centered-icon rounded-icon article__fullscreen modern-visible"><svg width="22" height="22" viewBox="0 0 22 22" class="centered-icon__svg rounded-icon__svg article__fullscreen__svg modern-visible__svg inline-expand-image__svg inline-icon__svg"><path d="M3.4 20.2L9 14.5 7.5 13l-5.7 5.6L1 14H0v7.5l.5.5H8v-1l-4.6-.8M18.7 1.9L13 7.6 14.4 9l5.7-5.7.5 4.7h1.2V.6l-.5-.5H14v1.2l4.7.6"></path></svg></span>';
+  var image = document.querySelector('.element--supporting');
+  var imageWrapper = document.querySelector('.u-responsive-ratio')[0];
+  var caption = document.querySelector('.caption--img')[0];
+
+  image.insertBefore(link, imageWrapper);
+  image.insertBefore(linkEnd, caption);
 
 }
 
 export function init(el, context, config, mediator) {
     if (document.querySelector('.content--labour-liverpool-article')) {
         removeLabourTagLink();
-        addCutout();
+        // addCutout();
         // for (var i = 0; i < document.getElementsByClassName('element-video').length; i++) {
         //     addVideoStyle('element-video', i);
         // }
         addBox();
+        addLightBox();
     }
 }
