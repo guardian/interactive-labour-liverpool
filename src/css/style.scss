@@ -481,7 +481,7 @@ $shadow-height: 18px;
 }
 .quoted__contents{
   color: #005689;
-  font-family: $f-sans-serif-text;
+  font-family: Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
   font-style: normal;
 
   &::before{
@@ -491,9 +491,40 @@ $shadow-height: 18px;
     background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote_marks.svg');
     background-size: contain;
     display: block;
-    position: absolute;
-    left: -3px;
+    float: left;
+    margin-left: -35px;
     margin-top:1px;
     background-repeat: no-repeat;
   }
+}
+
+.labour-liverpool-headline__content{
+  font-size: 36px !important;
+  line-height: 38px !important;
+
+  @include mq($until: mobileLandscape){
+    font-size: 28px !important;
+    line-height: 32px !important;
+  }
+}
+
+.element--lab-atom{
+    position: absolute !important;
+    top: 120px;
+    right: -417px;
+
+    @include mq($until:wide){
+      right: -335px;
+    }
+
+    @include mq($until:leftCol){
+      right: -335px;
+    }
+
+    @include mq($until: desktop){
+      right:auto;
+      position:relative !important;
+      top:auto;
+    }
+
 }
