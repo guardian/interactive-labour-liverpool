@@ -16,14 +16,6 @@ function addVideoStyle(el, index) {
     video[index].appendChild(videoEl);
 }
 
-function addCutout() {
-    var cutOut = document.createElement('div');
-    cutOut.setAttribute('class', 'membership-cutout');
-    var body = document.getElementsByClassName('content__article-body');
-    var child = body[0].childNodes[0];
-    body[0].insertBefore(cutOut, child);
-}
-
 function addBox() {
     var container = document.querySelector('.js-article__body');
     var paragraph = document.querySelectorAll('.js-article__body>p')[9];
@@ -43,7 +35,6 @@ function addPartNumber() {
 export function init(el, context, config, mediator) {
     if (document.querySelector('.content--labour-liverpool-article')) {
         removeLabourTagLink();
-        addCutout();
         // for (var i = 0; i < document.getElementsByClassName('element-video').length; i++) {
         //     addVideoStyle('element-video', i);
         // }

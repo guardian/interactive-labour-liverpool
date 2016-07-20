@@ -13,46 +13,7 @@ $mq-breakpoints: (
 
 $primary-color: #6fa19a;
 
-.membership-cutout {
-    height: 116px;
-    width: 156px;
-    background-image: url('https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2015/8/18/1439913873894/Ewen-MacAskill-R.png?auto=format&fit=max&q=55&usm=12&w=300&s=689fdccc925ee637796d48be8f691799');
-    background-position: center bottom;
-    background-size: cover;
-    float: left;
-    background-repeat: no-repeat;
-    z-index: 10;
-    margin-left: -20px;
-    margin-right: -15px;
-    @include mq($until: tablet) {
-        display: none;
-    }
-
-    @include mq($until: mobileLandscape) {
-        right: -10%;
-        width: 170px;
-    }
-
-}
-
 .content__article-body {
-    & > p:first-of-type {
-        color: $primary-color;
-        font-size: 22px;
-        line-height: 24px;
-        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
-        font-weight: 200;
-        margin-top: 10px;
-
-        &:before {
-            display: block;
-            float: left;
-            content: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote_marks.svg');
-            height: 22px;
-            width: 50px;
-            margin-right: 5px;
-        }
-    }
     h2 {
         font-size: 22px !important;
         line-height: 24px !important;
@@ -79,29 +40,6 @@ $primary-color: #6fa19a;
     @include mq($until: mobileLandscape) {
         display: none;
     }
-}
-
-.membership-standfirst {
-    margin-bottom: 24px;
-    color: $primary-color;
-    font-size: 22px;
-    line-height: 24px;
-    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
-    font-weight: 200;
-
-    &::before {
-        content: '';
-        display: block;
-        background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/line.png');
-        width: 100px;
-        height: 10px;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-}
-
-.content__standfirst {
-    display: none;
 }
 
 .content__labels {
@@ -246,7 +184,7 @@ $primary-color: #6fa19a;
     display: none !important;
 }
 
-.inline-quote {
+.quoted .inline-quote {
     height: 50px !important;
     width: 50px !important;
     position: relative !important;
@@ -269,9 +207,6 @@ $primary-color: #6fa19a;
 
 .vjs-control-bar {
     display: none !important;
-}
-
-.vjs-control-text {
 }
 
 .gu-media-wrapper:hover {
