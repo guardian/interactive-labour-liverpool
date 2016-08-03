@@ -54,14 +54,20 @@ function lightbox(){
   });
 }
 
+function isPhotoEssay(){
+  console.log('checking...')
+  if(document.querySelector('.element-image.element--immersive')){
+    document.body.setAttribute('data-photo-essay', 'isPhotoEssay');
+  }
+}
 
 export function init(el, context, config, mediator) {
     if (document.querySelector('.content--labour-liverpool-article')) {
         removeLabourTagLink();
-        // for (var i = 0; i < document.getElementsByClassName('element-video').length; i++) {
-        //     addVideoStyle('element-video', i);
-        // }
         addBox();
-        lightbox();
+        if(window.location.href==="https://www.theguardian.com/membership/2016/jul/20/labour-liverpool-clp-constituency"){
+          lightbox();
+        }
+        isPhotoEssay();
     }
 }
