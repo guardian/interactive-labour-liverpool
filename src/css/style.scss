@@ -66,22 +66,11 @@ $primary-color: #6fa19a;
     display: none !important;
 }
 
-.pullquote-paragraph {
-    color: white !important;
-}
-
 .element-pullquote {
     blockquote {
         margin-top: 6px;
         .pullquote-paragraph {
             text-indent: 0px !important;
-        }
-    }
-    &.element--supporting {
-        blockquote {
-            .pullquote-paragraph {
-                color: $primary-color !important;
-            }
         }
     }
     &.element--inline {
@@ -545,6 +534,70 @@ $shadow-height: 18px;
       @include mq($until: mobileLandscape) {
         float: none;
         margin-left: 0px;
+      }
+    }
+  }
+
+  .element-image{
+    &:not(.element--immersive):not(.element--supporting):not(.element--thumbnail):not(.element--showcase){
+      margin-top: 6px;
+    }
+
+    &.element--showcase + aside.element-pullquote{
+      margin-top: -219px;
+      margin-left: -239px;
+      position: relative;
+      width: 53.7rem;
+      padding-left: 238px;
+      padding-right: 80px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding-top: 20px;
+      padding-bottom: 16px;
+      -webkit-clip-path: polygon(0 11%, 100% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon(0 11%, 100% 0%, 100% 100%, 0% 100%);
+
+      @include mq($until: wide) {
+        margin-left: -159px;
+        width: 48.7rem;
+        padding: 20px 80px 16px 161px;
+      }
+
+      @include mq($until: leftCol) {
+        margin-top: -214px;
+        margin-left: 1px;
+        width: 38.7rem;
+        padding: 20px 80px 16px 15px;
+      }
+
+      @include mq($until:tablet) {
+        margin: 0 0 0 0;
+        width: 100%;
+        padding: 0 0 0 0;
+        background-color: transparent;
+        -webkit-clip-path: none;
+        clip-path: none;
+      }
+
+      .inline-tone-fill{
+        fill:white;
+
+        @include mq($until: tablet) {
+          fill:#005689;
+        }
+      }
+
+      blockquote{
+        p{
+          font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif !important;
+          font-size: 28px;
+          line-height: 32px;
+          font-weight: 200;
+          color: white !important;
+
+          @include mq($until: tablet) {
+            color: #333333 !important;
+          }
+        }
       }
     }
   }
