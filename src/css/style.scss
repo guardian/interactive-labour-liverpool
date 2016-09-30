@@ -20,6 +20,10 @@ $primary-color: #6fa19a;
         font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif !important;
         font-weight: 800 !important;
     }
+
+    strong{
+      color: #005689 !important;
+    }
 }
 
 .membership-illo {
@@ -42,9 +46,9 @@ $primary-color: #6fa19a;
     }
 }
 
-.content__labels {
-    display: none;
-}
+// .content__labels {
+//     display: none;
+// }
 
 .membership-byline {
     display: block;
@@ -186,12 +190,7 @@ $primary-color: #6fa19a;
 }
 
 .section-rule {
-    background-color: transparent !important;
-    background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/line.png');
-    height: 10px !important;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 150px !important;
+
 }
 
 .vjs-control-bar {
@@ -368,7 +367,69 @@ $shadow-height: 18px;
     }
 }
 
-.supporting-text__header {
+.quoted-text{
+  img{
+    width: 50%;
+    display: block;
+    height: auto;
+  }
+
+  h1{
+    font-weight: 200 !important;
+    // background-image: url('https://uploads.guim.co.uk/2016/08/24/circle_blue_light.png');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position-y: -19px;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 24px !important;
+    margin-left: 30px !important;
+    width: 80%;
+
+    @include mq($until: tablet){
+      margin-left: 0px;
+    }
+
+    &:nth-child(1){
+      margin-top: 6px;
+    }
+
+    &:nth-child(even){
+      // background-image: url('https://uploads.guim.co.uk/2016/08/24/larger_circle.png');
+    }
+
+    span.attribute{
+      font-size: 18px;
+      color: #005689;
+    }
+
+    &:before{
+      background-image: url('https://s3.amazonaws.com/gdn-cdn/membership-article-two/img/quote_marks.svg');
+      background-repeat: no-repeat;
+      display: block;
+      content: '';
+      height: 25px;
+      width: 51px;
+      margin-bottom: 6px;
+    }
+  }
+  h2{
+    font-size: 24px !important;
+    color: #005689;
+    border-top: 1px solid #005689;
+    padding-top: 6px;
+    width: 100%;
+    margin-bottom: 12px !important;
+    width: 80%;
+    margin-left: 30px !important;
+    @include mq($until: tablet){
+      margin-left: 0px;
+      width: 100%;
+    }
+  }
+}
+
+.supporting-text__header .quoted-text__header {
     font-size: 20px;
     line-height: 24px;
     font-family: Guardian Egyptian Web,Georgia,serif;
@@ -377,6 +438,12 @@ $shadow-height: 18px;
     padding-bottom: 18px;
     margin-bottom: 8px;
 }
+
+.quoted-text__header{
+  color: #005689;
+  font-weight: 200;
+}
+
 .supporting-text__content {
     font-size: 14px;
     line-height: 20px;
@@ -393,9 +460,10 @@ $shadow-height: 18px;
     text-decoration: none;
 }
 
-.element-rich-link {
-    display: none;
-}
+// .element-rich-link {
+//     display: none;
+// }
+
 .article__headline{
   &.headline{
     position: relative;
@@ -421,17 +489,17 @@ $shadow-height: 18px;
   }
 }
 
-.labour-liverpool-headline__content{
+.explore-series-headline__content{
   font-size: 36px !important;
-  line-height: 38px !important;
+  line-height: 35px !important;
 
   @include mq($until: mobileLandscape){
-    font-size: 28px !important;
-    line-height: 32px !important;
+    font-size: 26px !important;
+    line-height: 30px !important;
   }
 }
 
-.element--lab-atom{
+.element--lab-atom, .element--lab-story{
     position: absolute !important;
     top: 120px;
     right: -417px;
@@ -449,7 +517,20 @@ $shadow-height: 18px;
       position:relative !important;
       top:auto;
     }
+}
 
+.element--lab-atom{
+  &.longread{
+    top:300px;
+
+    @include mq($until: tablet) {
+      top: 0px;
+    }
+  }
+}
+
+.element--lab-story{
+  margin-top: 2.375rem !important;
 }
 
 .lightbox--boot{
@@ -512,7 +593,7 @@ $shadow-height: 18px;
 }
 
 [data-photo-essay="isPhotoEssay"] {
-
+  .content__article-body {
   .element--lab-atom{
     display: none !important;
   }
@@ -594,7 +675,7 @@ $shadow-height: 18px;
           font-weight: 200;
           color: white !important;
 
-          @include mq($until: tablet) {
+          @include mq($until: mobileLandscape) {
             color: #333333 !important;
           }
         }
@@ -626,6 +707,7 @@ $shadow-height: 18px;
   ul{
     display: inline-block;
     margin-top: -7px;
+    width: 100%;
     @include mq($until: mobileLandscape) {
       margin-top: -0.2em;
     }
@@ -635,7 +717,7 @@ $shadow-height: 18px;
     color: #005689;
     font-family: Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
     font-size: 12px;
-    width: 24%;
+    width: 100%;
     float: left;
     margin-right: 1%;
     line-height: 14px;
@@ -746,4 +828,156 @@ $shadow-height: 18px;
       }
     }
   }
+}
+}
+
+[data-ask="isAsk"]{
+    .element--lab-atom{
+      display: none !important;
+    }
+}
+
+.lal__kicker{
+    color: #005689;
+}
+
+.lal__dash{
+  opacity: .5;
+}
+
+.interactive {
+  &.element--immersive {
+    margin-left: -16.25rem;
+    margin-right: -26.4rem;
+    margin-bottom: -7.25rem;
+
+    @include mq($until: wide) {
+      margin-left: -11.25rem;
+      margin-right: -21.3rem;
+    }
+
+    @include mq($until: leftCol) {
+      margin-left: -1.25rem;
+    }
+
+    @include mq($until: desktop) {
+      margin-right:-6.25rem;
+    }
+
+    @include mq($until: mobileLandscape) {
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+  }
+}
+
+// .immersive-header-container--explore-series.explore{
+//   min-height: 548px;
+//
+//   @include mq($until: desktop){
+//     min-height: 398px;
+//   }
+// }
+
+.glass__shard0,
+.glass__shard1,
+.glass__shard2,
+.glass__shard3,
+.glass__shard4,
+.glass__shard5,
+.glass__shard6,
+.glass__shard7,
+.glass__shard8{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  z-index: 2000;
+}
+
+.glass__shard0{
+    right: -390px;
+    height: 124px;
+    width: 74px;
+    top: 130px;
+}
+
+.glass__shard1{
+  right: -300px;
+  width: 220px;
+  height: 130px;
+  transform: rotate(-94deg);
+  top: 140px;
+}
+
+.glass__shard2{
+  left: -90px;
+  height: 120px;
+  width: 83px;
+  top: 100px;
+}
+
+.glass__shard3{
+  right: -80px;
+  top: 270px;
+}
+
+.glass__shard4{
+  right: -92px;
+  width: 60px;
+  top: 100px;
+}
+
+
+.glass__shard5 {
+  width: 220px;
+  height: 110px;
+  left: -420px;
+  top: 120px;
+}
+
+.glass__shard6 {
+  width: 36px;
+  left: -131px;
+}
+
+.glass__shard7 {
+  width: 16px;
+  right: -271px;
+  top: 290px;
+}
+
+.glass__shard8 {
+  width: 177px;
+  height: 88px;
+  left: -324px;
+  top: 300px;
+  -webkit-transform: rotate(59deg);
+  -ms-transform: rotate(59deg);
+  transform: rotate(-27deg);
+}
+
+@for $i from 0 through 8 {
+  .#{glass__shard}#{$i}{
+    background-image: url('https://interactive.guim.co.uk/2016/06/interactive-labour-liverpool-article-2/1/assets/imgs/0' + $i + '.png');
+  }
+}
+
+// .heroic-video{
+//   position: relative;
+//   z-index: -2000;
+// }
+
+// .ad-slot-container{
+//   display: none !important;
+// }
+
+.explore-series-quotes{
+  display: none;
+}
+
+.explore-series-contact{
+  display: none;
 }
